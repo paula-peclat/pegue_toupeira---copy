@@ -8,15 +8,15 @@ def on_mouse_left_button_pressed(x, y):
 browserEvents.mouse_left.on_event(browserEvents.MouseButtonEvent.PRESSED,
     on_mouse_left_button_pressed)
 
+def on_mouse_move(x2, y2):
+    mySprite2.set_position(x2, y2)
+browserEvents.on_mouse_move(on_mouse_move)
+
 def on_countdown_end():
     game.game_over(True)
     game.set_game_over_effect(True, effects.confetti)
     game.set_game_over_scoring_type(game.ScoringType.HIGH_SCORE)
 info.on_countdown_end(on_countdown_end)
-
-def on_mouse_move(x2, y2):
-    mySprite2.set_position(x2, y2)
-browserEvents.on_mouse_move(on_mouse_move)
 
 mySprite2: Sprite = None
 mySprite: Sprite = None
